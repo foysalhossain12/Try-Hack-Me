@@ -1,1 +1,27 @@
+            ### Room Name : Classic Passwd  ###
+
+            ### Practice your skills in reversing and get the flag bypassing the login ###
+
+            ###Category : Reverse Engineering  ### 
+						
+Step 1 : Download Target File 
+
+Step 2 : Open target file  Via Ghidra
+
+Step 3 : See main function , there is no important Data . So  , check others function .
+
+Step 4 : After analazing all funtion  , we find important informaion in "gfl" function like this "printf("THM{%d%d}",0x638a78,0x2130);"
+
+Step 5 : Wow  , Finally  we got the flag format .Ok , we change 0x638a78,0x2130 into decimal number 6523512 ,8496 
+
+step 6: So , the flag is THM{65235128496}. As %d %d define  decimal number .
+
+Flag : THM{65235128496}.
+
+            ### This  problem you can also  solve  via  ltrace command
+						
+						like this ### echo "AGB6js5d9dkG7" | ./Challenge.Challenge
+						
+						here , "AGB6js5d9dkG7" is strings after ltracing  our target file .
+
 
