@@ -1,0 +1,109 @@
+﻿Room Name: Reverse Engineering
+
+
+This room focuses on teaching the basics of assembly through reverse engineering
+
+
+Task 2: crackme1
+
+
+We can solve task2 via many  process like strings command , ltrace ,strace or r2 
+
+
+            ------------------ 1st Process Via strings command  -----------------
+
+
+Step 1 : Download target file and  check file format via  file  command 
+
+
+Step 2:  Target file bin format  so ,  target file execution file  
+
+
+Step 3: Use strings  command and  analyze file content
+             Command:
+                               strings crackme1.bin
+
+
+Step 4: After , analyze content of file via strings  command  we got password of crackme1.bin
+            File like this  ha***
+
+
+          ----------------- 2nd Process Via ltrace command --------------------
+
+
+Step 1: Change permission of target file via chmod command .
+           Command :
+                              chmod  +x crackeme1.bin
+Step 2: Open target file  Via ltrace command 
+            Commnad:
+                             ltrace  ./crackeme1.bin
+  
+
+Step 3: Then , enter some  strings and see output properly you will get strcmp for comparing         two variable 
+
+
+Step 4: After all , we get password of our target file like this ha***
+ 
+   
+Task 3 : crackme2
+
+
+Step 1: Download target file and analize via file, strings ,ltrace command
+
+
+Step 2 : After using previous command like strings ,ltrace,strace we couldn’t find any password
+             For target file .
+Step 3: As we couldn’t find any password  we tried another process via “ghidra “ Reverse               Engineering Tools .
+
+
+Step 4: Open Target file via “ghidra “ and go to main function of target file
+
+
+Please , if you  have no knowledge about uses of ‘ghidra tools’  you  must learn first  how to use “ghidra “ >> It is so easy and so important tools for Reverse Engineering :)
+
+
+Step 5 :See at decompile part of “ghidra “ and you  will find like this “ if (local_14 == 0x137c)"
+  
+
+
+
+Step 6: Convert 0x137c into decimal you will get the password of the target file .
+
+
+Password :49**
+
+
+Task 4 :crackme3
+
+
+Step 1 : Download  target file and try previous process for find out the password of target file
+
+
+Step 2 : Via previous process we couldn’t find password of  Target file so try another process .
+
+
+Step 3: Open target file  Via r2 (radere 2 ) command.
+           R2 -d crackme3.bin
+
+
+Step4 : Use basic Command of  Radare 2 :
+                                                                     1.aaa  ------------for analyze all 
+                                                                     2.afl    ------------for see all function list in target file
+                                                                     3.pdf  @main --- for print disassembly main function
+
+
+Step 5: After complete ,above all step we will see like this :
+               
+
+
+Hare, symbolic letters are the first three letters of password 
+
+
+Password:  “azt123”
+
+
+Note : You can also get password via Break point 
+
+
+This room focuses on teaching the basics of assembly through reverse engineering
+This room focuses on teaching the basics of assembly through reverse engineering
